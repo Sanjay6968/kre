@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+if (typeof globalThis.crypto === 'undefined') {
+    globalThis.crypto = require('crypto');
+}
 const User = require('./models/User');
 const Asset = require('./models/Asset');
 require('dotenv').config();
